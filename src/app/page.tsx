@@ -1,8 +1,10 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { Check, Star } from "lucide-react";
+import { ArrowRight, Check, Star } from "lucide-react";
 import Phone from '@/components/Phone'
 import { Icons } from "@/components/Icons";
 import { Reviews } from "@/components/Reviews";
+import { buttonVariants } from "@/components/ui/button";
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -233,7 +235,7 @@ export default function Home() {
               print warranty
             </li>
 
-            {/* <div className='flex justify-center'>
+            <div className='flex justify-center'>
               <Link
                 className={buttonVariants({
                   size: 'lg',
@@ -242,7 +244,7 @@ export default function Home() {
                 href='/configure/upload'>
                 Create your case now <ArrowRight className='h-4 w-4 ml-1.5' />
               </Link>
-            </div> */}
+            </div>
           </ul>
         </MaxWidthWrapper>
       </section>
