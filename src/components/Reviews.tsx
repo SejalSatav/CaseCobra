@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { HTMLAttributes, useEffect, useRef, useState } from "react";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import { useInView } from "framer-motion";
-import { cn } from "@/lib/utils";
-import Phone from "./Phone";
+import { HTMLAttributes, useEffect, useRef, useState } from 'react'
+import MaxWidthWrapper from './MaxWidthWrapper'
+import { useInView } from 'framer-motion'
+import { cn } from '@/lib/utils'
+import Phone from './Phone'
 
 const PHONES = [
     '/testimonials/1.jpg',
@@ -25,6 +25,7 @@ function splitArray<T>(array: Array<T>, numParts: number) {
         }
         result[index].push(array[i])
     }
+
     return result
 }
 
@@ -32,7 +33,7 @@ function ReviewColumn({
     reviews,
     className,
     reviewClassName,
-    msPerPixel = 0
+    msPerPixel = 0,
 }: {
     reviews: string[]
     className?: string
@@ -78,7 +79,6 @@ interface ReviewProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 function Review({ imgSrc, className, ...props }: ReviewProps) {
-
     const POSSIBLE_ANIMATION_DELAYS = [
         '0s',
         '0.1s',
@@ -104,9 +104,7 @@ function Review({ imgSrc, className, ...props }: ReviewProps) {
             <Phone imgSrc={imgSrc} />
         </div>
     )
-
 }
-
 
 function ReviewGrid() {
     const containerRef = useRef<HTMLDivElement | null>(null)
@@ -152,6 +150,7 @@ function ReviewGrid() {
         </div>
     )
 }
+
 export function Reviews() {
     return (
         <MaxWidthWrapper className='relative max-w-5xl'>
@@ -160,7 +159,6 @@ export function Reviews() {
                 src='/what-people-are-buying.png'
                 className='absolute select-none hidden xl:block -left-32 top-1/3'
             />
-
 
             <ReviewGrid />
         </MaxWidthWrapper>

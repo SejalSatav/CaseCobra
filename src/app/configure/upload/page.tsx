@@ -1,16 +1,13 @@
 'use client'
 
-
 import { Progress } from '@/components/ui/progress'
+import { useToast } from '@/components/ui/use-toast'
 import { useUploadThing } from '@/lib/uploadthing'
 import { cn } from '@/lib/utils'
+import { Image, Loader2, MousePointerSquareDashed } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import { MousePointerSquareDashed, Image, Loader2 } from 'lucide-react'
 import { useState, useTransition } from 'react'
 import Dropzone, { FileRejection } from 'react-dropzone'
-import { useToast } from '@/components/ui/use-toast'
-
-
 
 const Page = () => {
     const { toast } = useToast()
@@ -96,16 +93,16 @@ const Page = () => {
                                     </div>
                                 ) : isDragOver ? (
                                     <p>
-                                        <span className='font-semibold'>Drop file</span> {' '}
-                                        to upload
+                                        <span className='font-semibold'>Drop file</span> to upload
                                     </p>
                                 ) : (
                                     <p>
-                                        <span className='font-semibold'>Click to upload</span> {' '}
-                                        or drag and drop
+                                        <span className='font-semibold'>Click to upload</span> or
+                                        drag and drop
                                     </p>
                                 )}
                             </div>
+
                             {isPending ? null : (
                                 <p className='text-xs text-zinc-500'>PNG, JPG, JPEG</p>
                             )}
@@ -116,6 +113,5 @@ const Page = () => {
         </div>
     )
 }
-
 
 export default Page

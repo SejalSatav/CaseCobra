@@ -1,27 +1,33 @@
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { ArrowRight, Check, Star } from "lucide-react";
+import { Icons } from '@/components/Icons'
+import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 import Phone from '@/components/Phone'
-import { Icons } from "@/components/Icons";
-import { Reviews } from "@/components/Reviews";
-import { buttonVariants } from "@/components/ui/button";
+import { Reviews } from '@/components/Reviews'
+import { buttonVariants } from '@/components/ui/button'
+import { ArrowRight, Check, Star } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="bg-slate-50">
+    <div className='bg-slate-50 grainy-light'>
       <section>
         <MaxWidthWrapper className='pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52'>
           <div className='col-span-2 px-6 lg:px-0 lg:pt-4'>
             <div className='relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start'>
               <div className='absolute w-28 left-0 -top-20 hidden lg:block'>
-                <img src="/snake-1.png" className='w-full' />
+                {/* i forgot this div right here in the video, it's purely visual gradient and looks nice */}
+                <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t via-slate-50/50 from-slate-50 h-28' />
+                <img src='/snake-1.png' className='w-full' />
               </div>
               <h1 className='relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl'>
-                Your Image on a <span className='bg-green-600 px-2 text-white'>Custom</span> Phone Case
+                Your Image on a{' '}
+                <span className='bg-green-600 px-2 text-white'>Custom</span>{' '}
+                Phone Case
               </h1>
               <p className='mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap'>
-                Capture your favourite memories with your own,{' '} <span className='font-semibold'>one-of-one</span> phone case.
-                CaseCobra allows you to protect your memories, not just your phone case.
+                Capture your favorite memories with your own,{' '}
+                <span className='font-semibold'>one-of-one</span> phone case.
+                CaseCobra allows you to protect your memories, not just your
+                phone case.
               </p>
 
               <ul className='mt-8 space-y-2 text-left font-medium flex flex-col items-center sm:items-start'>
@@ -31,8 +37,8 @@ export default function Home() {
                     High-quality, durable material
                   </li>
                   <li className='flex gap-1.5 items-center text-left'>
-                    <Check className='h-5 w-5 shrink-0 text-green-600' />
-                    5 year print guarantee
+                    <Check className='h-5 w-5 shrink-0 text-green-600' />5 year
+                    print guarantee
                   </li>
                   <li className='flex gap-1.5 items-center text-left'>
                     <Check className='h-5 w-5 shrink-0 text-green-600' />
@@ -80,13 +86,12 @@ export default function Home() {
                   </div>
 
                   <p>
-                    <span className='font-semibold'>1,750</span> happy customers
+                    <span className='font-semibold'>1.250</span> happy customers
                   </p>
                 </div>
               </div>
             </div>
           </div>
-
 
           <div className='col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit'>
             <div className='relative md:max-w-xl'>
@@ -105,13 +110,17 @@ export default function Home() {
       </section>
 
       {/* value proposition section */}
-      <section className='bg-slate-100 py-24'>
+      <section className='bg-slate-100 grainy-dark py-24'>
         <MaxWidthWrapper className='flex flex-col items-center gap-16 sm:gap-32'>
           <div className='flex flex-col lg:flex-row items-center gap-4 sm:gap-6'>
-            <h2 className='order-1 mt-2 tracking-tight text-center text-balance !leading tight font-bold text-5xl md:text-6xl text-gray-900'>
+            <h2 className='order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900'>
               What our{' '}
               <span className='relative px-2'>
-                customers{' '}<Icons.underline className='hidden sm:block pointer-events-none absolute inset-x-0 -bottom-6 text-green-500' /></span>{' '}say</h2>
+                customers{' '}
+                <Icons.underline className='hidden sm:block pointer-events-none absolute inset-x-0 -bottom-6 text-green-500' />
+              </span>{' '}
+              say
+            </h2>
             <img src='/snake-2.png' className='w-24 order-0 lg:order-2' />
           </div>
 
@@ -126,7 +135,13 @@ export default function Home() {
               </div>
               <div className='text-lg leading-8'>
                 <p>
-                  "The case feels durable and I even got a compliment on the design. Had the case for two and a half months now and <span className='p-0.5 bg-slate-800 text-white'>the image is super clear</span>, on the case I had before, the image started to fading into yellow-ish color after a couple weeks. Love it!"
+                  "The case feels durable and I even got a compliment on the
+                  design. Had the case for two and a half months now and{' '}
+                  <span className='p-0.5 bg-slate-800 text-white'>
+                    the image is super clear
+                  </span>
+                  , on the case I had before, the image started fading into
+                  yellow-ish color after a couple weeks. Love it."
                 </p>
               </div>
               <div className='flex gap-4 mt-2'>
@@ -138,12 +153,13 @@ export default function Home() {
                 <div className='flex flex-col'>
                   <p className='font-semibold'>Jonathan</p>
                   <div className='flex gap-1.5 items-center text-zinc-600'>
-                    <Check className='h-4 w-4 strokes-[3px] text-green-600' />
-                    <p className='text-sm'>Verified purchase</p>
+                    <Check className='h-4 w-4 stroke-[3px] text-green-600' />
+                    <p className='text-sm'>Verified Purchase</p>
                   </div>
                 </div>
               </div>
             </div>
+
             {/* second user review */}
             <div className='flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20'>
               <div className='flex gap-0.5 mb-2'>
@@ -155,9 +171,13 @@ export default function Home() {
               </div>
               <div className='text-lg leading-8'>
                 <p>
-                  "I usually keep my phone together with my keys in my pocket and that led to some pretty heavy scratchmarks on all of my las phone cases. This one, besides a barely noticeable scratch on the corner,{' '}
+                  "I usually keep my phone together with my keys in my pocket
+                  and that led to some pretty heavy scratchmarks on all of my
+                  last phone cases. This one, besides a barely noticeable
+                  scratch on the corner,{' '}
                   <span className='p-0.5 bg-slate-800 text-white'>
-                    looks brand new after about half a year</span>
+                    looks brand new after about half a year
+                  </span>
                   . I dig it."
                 </p>
               </div>
@@ -168,10 +188,10 @@ export default function Home() {
                   alt='user'
                 />
                 <div className='flex flex-col'>
-                  <p className='font-semibold'>Aditya</p>
+                  <p className='font-semibold'>Josh</p>
                   <div className='flex gap-1.5 items-center text-zinc-600'>
-                    <Check className='h-4 w-4 strokes-[3px] text-green-600' />
-                    <p className='text-sm'>Verified purchase</p>
+                    <Check className='h-4 w-4 stroke-[3px] text-green-600' />
+                    <p className='text-sm'>Verified Purchase</p>
                   </div>
                 </div>
               </div>
@@ -183,7 +203,6 @@ export default function Home() {
           <Reviews />
         </div>
       </section>
-
 
       <section>
         <MaxWidthWrapper className='py-24'>
@@ -249,5 +268,5 @@ export default function Home() {
         </MaxWidthWrapper>
       </section>
     </div>
-  );
+  )
 }
